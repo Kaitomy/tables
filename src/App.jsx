@@ -6,6 +6,8 @@ import CardComponent from './components/CardComponent';
 import HomePage from './pages/HomePage';
 import CardsPage from './pages/CardsPage';
 import TablesPage from './pages/TablesPage';
+import PeoplePage from './pages/PeoplePage';
+import DescriptionPage from './pages/DescriptionPage';
 
 function App() {
   return (
@@ -22,6 +24,8 @@ function App() {
               <Link to="/" className="text-white text-decoration-none me-3">Главная страница</Link>
               <Link to="/cards" className="text-white text-decoration-none me-3">Лягушеньки</Link> 
               <Link to="/tables" className="text-white text-decoration-none me-3">Таблички</Link> 
+              <Link to="/human" className="text-white text-decoration-none me-3">Человеки</Link> 
+              <Link to="/description" className="text-white text-decoration-none me-3">Описание</Link> 
             </div>
           </div>
         </div>
@@ -31,6 +35,8 @@ function App() {
           <Route path="/" element={<HomePage/>}/>
           <Route path="/cards" element={<CardsPage/>}/>
           <Route path="/tables" element={<TablesPage/>}/>
+          <Route path="/human" element={<PeoplePage/>}/>
+          <Route path="/description" element={<DescriptionPage/>}/>
         </Routes>
       </main>
       <footer className="bg-secondary py-3 mt-auto">
