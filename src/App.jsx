@@ -1,46 +1,37 @@
 import logo from './logo.svg';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import {BrowserRouter as Router, Routes, Route, Link} from 'react-router-dom'
 import './App.css';
 import CardComponent from './components/CardComponent';
+import HomePage from './pages/HomePage';
+import CardsPage from './pages/CardsPage';
+import TablesPage from './pages/TablesPage';
 
 function App() {
   return (
+    <Router>
     <div className="App d-flex flex-column min-vh-100">
-      <header className="bg-dark text-white py-3">
+      <header className="text-white py-3" style={{backgroundColor: 'rgba(146, 79, 109, 1)'}}>
         <div className="container">
           <div className="row align-items-center">
-            <div className="col">
+            <div className="col-md-6">
                <img src={logo} className="App-logo" alt="logo" style={{height: '40px'}}/>
               <span>Мое приложение</span>
+            </div>
+            <div className="col-md-6 text-end">
+              <Link to="/" className="text-white text-decoration-none me-3">Главная страница</Link>
+              <Link to="/cards" className="text-white text-decoration-none me-3">Лягушеньки</Link> 
+              <Link to="/tables" className="text-white text-decoration-none me-3">Таблички</Link> 
             </div>
           </div>
         </div>
       </header>
       <main className="container my-5">
-        <div className="row g-4">
-            <div className="col-md-4">
-            <CardComponent
-            title="Лягушечка 1"
-            imageUrl = "/images/1.jpg"
-            desctiption="Это самая крутая лягушечка номер 1"
-            imageAlt="Лягушечка 1"/>
-          </div>
-          <div className="col-md-4">
-            <CardComponent
-            title="Лягушечка 2"
-            imageUrl = "/images/2.jpg"
-            desctiption="Это самая крутая лягушечка номер 2 Это самая крутая лягушечка номер 2 Это самая крутая лягушечка номер 2 Это самая крутая лягушечка номер 2"
-            imageAlt="Лягушечка 2"/>
-          </div>
-
-            <div className="col-md-4">
-            <CardComponent
-            title="Лягушечка 3"
-            imageUrl = "/images/3.jpg"
-            desctiption="Это самая крутая лягушечка номер 3"
-            imageAlt="Лягушечка 3"/>
-          </div>
-        </div>
+        <Routes>
+          <Route path="/" element={<HomePage/>}/>
+          <Route path="/cards" element={<CardsPage/>}/>
+          <Route path="/tables" element={<TablesPage/>}/>
+        </Routes>
       </main>
       <footer className="bg-secondary py-3 mt-auto">
         <div className="container">
@@ -51,8 +42,8 @@ function App() {
           </div>
         </div>
       </footer> 
-
     </div>
+    </Router>
   );
 }
 
