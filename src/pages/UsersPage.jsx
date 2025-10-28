@@ -158,6 +158,13 @@ const UsersPage = () => {
                             </div>
 
                         </div>
+                        <div className='card-footer bg-transparent'>
+                            <button className='btn btn-warning me-2' 
+                            onClick={() => startEdit(user)}>Изменить</button>
+                            <button className='btn btn-danger' 
+                            onClick={() => handleDelete(user.id)}>Удалить</button>
+                            
+                        </div>
                     </div>
                 </div>
             ))}
