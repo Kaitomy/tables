@@ -1,6 +1,41 @@
-import React from 'react'
+import React from 'react';
+import {motion} from 'framer-motion';
 
 const DescriptionPage = () => {
+
+    const containerVariants = {
+        hidden: {opacity: 0},
+        visible: {
+            opacity: 1,
+            transition: {
+                staggerChildren: 0.1
+            }
+        }
+    };
+
+    const itemVariants = {
+        hidden: {opacity: 0, x: -20},
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.3
+            }
+        }
+    };
+
+    const itemVariants_reverse = {
+        hidden: {opacity: 0, x: 20},
+        visible: {
+            opacity: 1,
+            x: 0,
+            transition: {
+                duration: 0.3
+            }
+        }
+    };
+
+
   return (
     <div>
         <div className='row'>
@@ -60,7 +95,60 @@ const DescriptionPage = () => {
                                             </div>
                                         </div>
                                     </div>
+                                    
+                                    <motion.div 
+                                    className="mb-4"
+                                    variants={containerVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    >
+                                        <h4 className='text-success mb-3'>Технические навыки</h4>
+                                        <div className='row'>
+                                            <div className='col-md-6'>
+                                                <h6>Frontend</h6>
+                                                <div className='mb-2'>
+                                                    <motion.span variants={itemVariants} 
+                                                    className='badge bg-primary me-1'>React</motion.span>
+                                                    <motion.span variants={itemVariants} 
+                                                    className='badge bg-primary me-1'>JavaScript</motion.span>
+                                                    <motion.span variants={itemVariants} 
+                                                    className='badge bg-primary me-1'>TypeScript</motion.span>
+                                                </div>
 
+                                                <div className='mb-2'>
+                                                    <motion.span variants={itemVariants} 
+                                                    className='badge bg-secondary me-1'>HTML5</motion.span>
+                                                    <motion.span variants={itemVariants} 
+                                                    className='badge bg-secondary me-1'>CSS</motion.span>
+                                                    <motion.span variants={itemVariants} 
+                                                    className='badge bg-secondary me-1'>Bootstrap</motion.span>
+                                                </div>
+                                            </div>
+
+                                            <div className='col-md-6'>
+                                                <h6>Backend & Tools</h6>
+                                                <div className='mb-2'>
+                                                    <motion.span variants={itemVariants_reverse} 
+                                                    className='badge bg-primary me-1'>Node.js</motion.span>
+                                                    <motion.span variants={itemVariants_reverse} 
+                                                    className='badge bg-primary me-1'>ASP.Net Core</motion.span>
+                                                    <motion.span variants={itemVariants_reverse} 
+                                                    className='badge bg-primary me-1'>C#</motion.span>
+                                                </div>
+
+                                                <div className='mb-2'>
+                                                    <motion.span variants={itemVariants_reverse} 
+                                                    className='badge bg-secondary me-1'>Python</motion.span>
+                                                    <motion.span variants={itemVariants_reverse} 
+                                                    className='badge bg-secondary me-1'>Django</motion.span>
+                                                    <motion.span variants={itemVariants_reverse} 
+                                                    className='badge bg-secondary me-1'>Docker</motion.span>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </motion.div>
+                                    
                                     <div className='mb-4'>
                                         <h3 className='text-warning mb-3'>
                                             Образование
