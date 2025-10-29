@@ -11,6 +11,9 @@ import DescriptionPage from './pages/DescriptionPage';
 import FormsPage from './pages/FormsPage';
 import MapsPage from './pages/MapsPage';
 import UsersPage from './pages/UsersPage';
+import TypeScriptPage from './pages/TypeScriptPage';
+import CalculatePage from './pages/CalculatePage';
+import SliderPage from './pages/SliderPage';
 
 function App() {
   return (
@@ -32,6 +35,9 @@ function App() {
               <Link to="/forms" className="text-white text-decoration-none me-3">Формы</Link> 
               <Link to="/maps" className="text-white text-decoration-none me-3">Карты</Link> 
               <Link to="/users" className="text-white text-decoration-none me-3">Пользователи</Link> 
+              <Link to="/ts" className="text-white text-decoration-none me-3">TS</Link> 
+              <Link to="/calc" className="text-white text-decoration-none me-3">Калькулятор</Link> 
+              <Link to="/slider" className="text-white text-decoration-none me-3">Слайдер</Link> 
             </div>
           </div>
         </div>
@@ -46,6 +52,9 @@ function App() {
           <Route path="/forms" element={<FormsPage/>}/>
           <Route path="/maps" element={<MapsPage/>}/>
           <Route path="/users" element={<UsersPage/>}/>
+          <Route path="/ts" element={<TypeScriptPage/>}/>
+          <Route path="/calc" element={<CalculatePage/>}/>
+          <Route path="/slider" element={<SliderPage/>}/>
         </Routes>
       </main>
       <footer className="bg-secondary py-3 mt-auto">
